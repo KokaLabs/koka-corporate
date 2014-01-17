@@ -5,3 +5,4 @@ target/
 .pmd
 .pmdruleset.xml
 .DS_Store
+target-eclipse/
