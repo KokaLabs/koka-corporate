@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0  http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0  http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>kokalabs</groupId>
@@ -93,6 +94,14 @@
            koka:koka-corporate-dependencies is an example of a BOM
   </description>
 
+  <distributionManagement>
+    <repository>
+        <id>internal.repo</id>
+        <name>Temporary Staging Repository</name>
+        <url>file://${built.repo.dir}</url>
+    </repository>
+</distributionManagement>
+  
   <modules>
     <module>dependencies</module>
   </modules>
@@ -102,6 +111,9 @@
   </prerequisites>
 
   <properties>
+    <github.global.server>github</github.global.server>
+    <built.repo.dir>${project.build.directory}/mvn-repo</built.repo.dir>
+    
     <real.project.version>5.2</real.project.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -383,21 +395,56 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    
+    <plugins>
+      <plugin>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <configuration>
+          <altDeploymentRepository>internal.repo::default::file://${built.repo.dir}</altDeploymentRepository>
+        </configuration>
+      </plugin>
+        
+      <plugin>
+        <groupId>com.github.github</groupId>
+        <artifactId>site-maven-plugin</artifactId>
+        <version>0.9</version>
+        <configuration>
+          <message>Maven artifacts for ${project.groupId}:${project.artifactId}:${project.version} ~${maven.build.timestamp}</message>
+          <noJekyll>true</noJekyll>
+          <outputDirectory>${built.repo.dir}</outputDirectory>
+          <includes>
+            <include>**/*</include>
+          </includes>
+          <repositoryOwner>KokaLabs</repositoryOwner>
+          <repositoryName>mvn-repo</repositoryName>
+          <branch>refs/heads/master</branch>
+           <path>maven/snapshots</path>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>site</goal>
+            </goals>
+            <phase>deploy</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
   </build>
 
   <profiles>
     <!--
       Given version: x.y.z-SNAPSHOT
 
-      | Arguments                   | Output |
+      | Arguments | Output |
       | =========================== | ====== |
-      | -Drelease.version=A         | A      |
+      | -Drelease.version=A | A |
       | -Drelease.version.postfix=B | x.y.zB |
     -->
     <profile>
       <id>prepare-release</id>
       <properties>
-        <release.version.postfix/>
+        <release.version.postfix />
         <release.version>${real.project.version}${release.version.postfix}</release.version>
       </properties>
       <build>
