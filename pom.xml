@@ -510,6 +510,7 @@
               <repositoryName>mvn-repo</repositoryName>
               <branch>refs/heads/master</branch>
               <path>maven/snapshots</path>
+              <merge>true</merge>
             </configuration>
             <executions>
               <execution>
