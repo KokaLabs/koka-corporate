@@ -281,6 +281,12 @@
         </plugin>
 
         <plugin>
+          <groupId>com.github.github</groupId>
+          <artifactId>site-maven-plugin</artifactId>
+          <version>0.9</version>
+        </plugin>
+
+        <plugin>
           <groupId>com.github.goldin</groupId>
           <artifactId>copy-maven-plugin</artifactId>
           <version>0.2.5</version>
@@ -471,7 +477,6 @@
           <plugin>
             <groupId>com.github.github</groupId>
             <artifactId>site-maven-plugin</artifactId>
-            <version>0.9</version>
             <configuration>
               <message>Maven artifacts for ${project.groupId}:${project.artifactId}:${project.version} ~${maven.build.timestamp}</message>
               <noJekyll>true</noJekyll>
