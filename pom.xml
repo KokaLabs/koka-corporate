@@ -112,7 +112,7 @@
 
   <properties>
     <github.global.server>github</github.global.server>
-    <built.repo.dir>${project.build.directory}/mvn-repo</built.repo.dir>
+    <built.repo.dir>${user.dir}/${build.dir.name}/mvn-repo</built.repo.dir>
 
     <real.project.version>5.2</real.project.version>
 
@@ -191,6 +191,10 @@
 
     <pluginManagement>
       <plugins>
+        <plugin>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.7</version>
+        </plugin>
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
           <version>2.4</version>
@@ -463,6 +467,24 @@
                 <goals>
                   <goal>jar-no-fork</goal>
                 </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>validate</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <tasks>
+                    <delete dir="${built.repo.dir}"/>
+                    <mkdir dir="${built.repo.dir}"/>
+                  </tasks>
+                </configuration>
               </execution>
             </executions>
           </plugin>
