@@ -85,7 +85,7 @@
                                  (imports koka:koka-corporate-dependencies)
           pom.xml                (parent koka:koka-corporate)
 
-      With this setup, you standarize properties/plugin versions and have common
+      With this setup, you standardize properties/plugin versions and have common
       dependency versions for everything except the bom.
 
     VOCABULARY:
