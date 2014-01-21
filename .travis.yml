@@ -1,2 +1,7 @@
 language: java
-
+script:
+  - mvn -Pprepare-release -Drelease.version.posfix=-${TRAVIS_BUILD_NUMBER}
+  - mvn -Prelease clean deploy
+env:
+  global:
+      secure: 'bnAaNvgHlpb7zIX+s+4hA2aHmR4pPXrqxYuUkdKIX+k3odNvfuwU5rT6Ug5K9bJcnMc/1FoyINpmt7X9gPj0cNxiGHB+b32JPMZ7wgMjcMIDb7wCr9YJ6HrHqEP+dnKbph8WgoPjfqt8mwPl9LSmfhE7IokbMLwOG6ZEu35lOE0='
