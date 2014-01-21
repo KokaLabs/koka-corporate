@@ -9,7 +9,7 @@
   <packaging>pom</packaging>
 
   <description>
-    USAGE (as of v3.0+):
+    USAGE:
       Step 1: add this to the top of your pom:
 
       <![CDATA[
@@ -42,7 +42,7 @@
       ]]>
 
     WHY SO COMPLICATED?
-      Before, you only needed step 1, because that pom contained
+      Ideally you would only need step 1, because that pom could contain
       both a &lt;pluginManagement&gt; and a &lt;dependencyManagement&gt;
 
       This is problematic in example project x:
@@ -114,7 +114,7 @@
     <github.global.server>github</github.global.server>
     <built.repo.dir>${user.dir}/${build.dir.name}/mvn-repo</built.repo.dir>
 
-    <real.project.version>5.2</real.project.version>
+    <real.project.version>0.1</real.project.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
