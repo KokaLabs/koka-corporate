@@ -97,8 +97,8 @@
   <distributionManagement>
     <repository>
       <id>internal.repo</id>
-	    <name>Temporary Staging Repository</name>
-	    <url>file://${built.repo.dir}</url>
+      <name>Temporary Staging Repository</name>
+      <url>file://${built.repo.dir}</url>
     </repository>
   </distributionManagement>
 
