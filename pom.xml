@@ -442,7 +442,7 @@
                   </includes>
                   <replacements>
                     <replacement>
-                      <token>0.0.0-SNAPSHOT</token>
+                      <token><![CDATA[(?<=<version>)${project.version}(?=</version>)]]></token>
                       <value>${release.version}</value>
                     </replacement>
                   </replacements>
