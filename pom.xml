@@ -94,14 +94,6 @@
            koka:koka-corporate-dependencies is an example of a BOM
   </description>
 
-  <distributionManagement>
-    <repository>
-      <id>internal.repo</id>
-      <name>Temporary Staging Repository</name>
-      <url>file://${built.repo.dir}</url>
-    </repository>
-  </distributionManagement>
-
   <modules>
     <module>dependencies</module>
   </modules>
@@ -468,60 +460,6 @@
                 <goals>
                   <goal>jar-no-fork</goal>
                 </goals>
-              </execution>
-            </executions>
-          </plugin>
-
-          <plugin>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <executions>
-              <execution>
-                <phase>validate</phase>
-                <goals>
-                  <goal>run</goal>
-                </goals>
-                <configuration>
-                  <tasks>
-                    <delete dir="${built.repo.dir}"/>
-                    <mkdir dir="${built.repo.dir}"/>
-                  </tasks>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-
-          <plugin>
-            <artifactId>maven-deploy-plugin</artifactId>
-            <configuration>
-              <altDeploymentRepository>internal.repo::default::file://${built.repo.dir}</altDeploymentRepository>
-            </configuration>
-          </plugin>
-
-          <plugin>
-            <groupId>com.github.github</groupId>
-            <artifactId>site-maven-plugin</artifactId>
-            <configuration>
-              <message>Deploy v${project.version}
-
-~${maven.build.timestamp}</message>
-              <noJekyll>true</noJekyll>
-              <outputDirectory>${built.repo.dir}</outputDirectory>
-              <includes>
-                <include>**/*</include>
-              </includes>
-              <repositoryOwner>KokaLabs</repositoryOwner>
-              <repositoryName>mvn-repo</repositoryName>
-              <branch>refs/heads/master</branch>
-              <path>maven/snapshots</path>
-              <merge>true</merge>
-              <oauth2Token>${env.GITHUB_TOKEN}</oauth2Token>
-            </configuration>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>site</goal>
-                </goals>
-                <phase>deploy</phase>
               </execution>
             </executions>
           </plugin>
