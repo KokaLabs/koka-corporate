@@ -68,7 +68,7 @@
       But this has 2 problems:
         1. Without a parent, x-bom inherits from the maven superpom. Thus
            plugin versions and properties are different from all other modules.
-        2. You are unable to use maven-versions-plugin since you do not
+        2. You are unable to use versions-maven-plugin since you do not
            have a single top level pom that all modules lead back to.
 
       To fix these problems, you have to change both the project structure and
