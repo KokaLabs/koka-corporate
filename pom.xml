@@ -107,6 +107,8 @@
     <built.repo.dir>${user.dir}/${build.dir.name}/mvn-repo</built.repo.dir>
 
     <real.project.version>0.1</real.project.version>
+    <bintray.package>koka-corporate</bintray.package>
+    <bintray.url>https://api.bintray.com/maven/kokalabs/maven/${bintray.package}/</bintray.url>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -398,6 +400,13 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <distributionManagement>
+    <repository>
+      <id>bintray</id>
+      <url>${bintray.url}</url>
+    </repository>
+  </distributionManagement>
 
   <profiles>
     <!--
