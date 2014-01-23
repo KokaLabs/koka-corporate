@@ -9,8 +9,8 @@ after_success:
   - git --global config user.email 'builds@travis-ci.com'
   - git commit -am "Release v${MAVEN_VERSION}"
   - git tag v${MAVEN_VERSION}
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GITHUB_TOKEN}:@github.com" > .git/credentials
+  - git config credential.helper "store"
+  - echo "https://${GITHUB_TOKEN}:@github.com" > ~/.git-credentials
   - git push https://github.com/KokaLabs/koka-corporate.git v${MAVEN_VERSION}
 env:
   global:
