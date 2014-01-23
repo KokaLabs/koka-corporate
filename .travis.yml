@@ -2,7 +2,7 @@ language: java
 install: true
 script:
   - mvn -Pprepare-release -Drelease.version.postfix=-${TRAVIS_BUILD_NUMBER}
-  - mvn -Prelease clean deploy
+  - mvn -Prelease
 env:
   global:
     - secure: 'S3wnCFEK+ibZTe9/fRGiqsll/41j+AgsWhp4omY/XvmUFP5gnQVKqUyPu5QTdHyAUnNcVljiuwSTTH4f7ZSGs0ehYa+r3YbbwxGxbY8wRKYijkAx0NWzMeou6uBajJUj8au5RfAq3E7YCNWLrvDoylDTUxM5KMUSsPSlF6KfmcI='
