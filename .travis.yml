@@ -15,4 +15,5 @@ env:
     - secure: 'chT9GyTqiSlUi79t45b4gw0dMORmhbv+d3pgS6EE8RODQ3R5YjaAHRe/Wjboo1kYa5IXrmnTkUzSN6vEaICxoj6TzrIkVAMoifAMt5ZjCrjKRvRN/ba2JZQslPrskKpgoAOtqFu72oTziXpWhTDEAGX0yDXuwxdEYcRmfq7VJOI='
     - secure: 'VWMZpgbgYmsjQwj2/pQGLZ5AtDhziXdjtEuP61VYVTgX3bs0ZXurF3fllBbUTOdFGDMsqT6zdoZXN22v1cfBVuzXeWTLWFb3/bkuycliAlPMe4HnE52USGU7J4dwqt5aOZE9P852VjXUqOhI/h4TDVYFzo9W3/GuGpimGunlC9Q='
 branches:
-  only: master
+  only:
+    - master
