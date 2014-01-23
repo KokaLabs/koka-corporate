@@ -10,6 +10,7 @@ script:
   - git tag v${MAVEN_VERSION}
   - git config credential.helper store
   - echo "https://${GITHUB_TOKEN}:@github.com" > ~/.git-credentials
+  - cat ~/.git-credentials
   - git push https://github.com/KokaLabs/koka-corporate.git v${MAVEN_VERSION}
 env:
   global:
