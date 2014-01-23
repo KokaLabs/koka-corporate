@@ -8,8 +8,7 @@ script:
   - git config user.email 'builds@travis-ci.com'
   - git commit -am "Release v${MAVEN_VERSION}"
   - git tag v${MAVEN_VERSION}
-  - git remote add origin2 https://${GITHUB_TOKEN}@github.com/KokaLabs/koka-corporate.git
-  - git push origin2 v${MAVEN_VERSION}
+  - git push https://${GITHUB_TOKEN}@github.com/KokaLabs/koka-corporate.git v${MAVEN_VERSION} | sed "s/${GITHUB_TOKEN}/[secure]/g"
 env:
   global:
     - secure: 'S3wnCFEK+ibZTe9/fRGiqsll/41j+AgsWhp4omY/XvmUFP5gnQVKqUyPu5QTdHyAUnNcVljiuwSTTH4f7ZSGs0ehYa+r3YbbwxGxbY8wRKYijkAx0NWzMeou6uBajJUj8au5RfAq3E7YCNWLrvDoylDTUxM5KMUSsPSlF6KfmcI='
