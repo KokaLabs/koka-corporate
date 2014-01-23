@@ -3,7 +3,17 @@ install: true
 script:
   - mvn -s settings.xml -Pprepare-release -Drelease.version.postfix=-${TRAVIS_BUILD_NUMBER}
   - mvn -s settings.xml -Prelease
+after_success:
+  - eval $(echo 'MAVEN_VERSION=${project.version}' | mvn -s settings.xml help:evaluate | grep ^MAVEN_VERSION=)
+  - git config user.name 'Travis CI'
+  - git config user.email 'builds@travis-ci.com'
+  - git commit -am "Release v${MAVEN_VERSION}"
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GITHUB_TOKEN}:@github.com" > .git/credentials
+  - git tag v${MAVEN_VERSION}
+  - git push origin v${MAVEN_VERSION}
 env:
   global:
     - secure: 'S3wnCFEK+ibZTe9/fRGiqsll/41j+AgsWhp4omY/XvmUFP5gnQVKqUyPu5QTdHyAUnNcVljiuwSTTH4f7ZSGs0ehYa+r3YbbwxGxbY8wRKYijkAx0NWzMeou6uBajJUj8au5RfAq3E7YCNWLrvDoylDTUxM5KMUSsPSlF6KfmcI='
     - secure: 'chT9GyTqiSlUi79t45b4gw0dMORmhbv+d3pgS6EE8RODQ3R5YjaAHRe/Wjboo1kYa5IXrmnTkUzSN6vEaICxoj6TzrIkVAMoifAMt5ZjCrjKRvRN/ba2JZQslPrskKpgoAOtqFu72oTziXpWhTDEAGX0yDXuwxdEYcRmfq7VJOI='
+    - secure: 'bnAaNvgHlpb7zIX+s+4hA2aHmR4pPXrqxYuUkdKIX+k3odNvfuwU5rT6Ug5K9bJcnMc/1FoyINpmt7X9gPj0cNxiGHB+b32JPMZ7wgMjcMIDb7wCr9YJ6HrHqEP+dnKbph8WgoPjfqt8mwPl9LSmfhE7IokbMLwOG6ZEu35lOE0='
