@@ -5,4 +5,5 @@ script:
   - mvn -Prelease clean deploy
 env:
   global:
-      secure: 'bnAaNvgHlpb7zIX+s+4hA2aHmR4pPXrqxYuUkdKIX+k3odNvfuwU5rT6Ug5K9bJcnMc/1FoyINpmt7X9gPj0cNxiGHB+b32JPMZ7wgMjcMIDb7wCr9YJ6HrHqEP+dnKbph8WgoPjfqt8mwPl9LSmfhE7IokbMLwOG6ZEu35lOE0='
+    - secure: 'S3wnCFEK+ibZTe9/fRGiqsll/41j+AgsWhp4omY/XvmUFP5gnQVKqUyPu5QTdHyAUnNcVljiuwSTTH4f7ZSGs0ehYa+r3YbbwxGxbY8wRKYijkAx0NWzMeou6uBajJUj8au5RfAq3E7YCNWLrvDoylDTUxM5KMUSsPSlF6KfmcI='
+    - secure: 'chT9GyTqiSlUi79t45b4gw0dMORmhbv+d3pgS6EE8RODQ3R5YjaAHRe/Wjboo1kYa5IXrmnTkUzSN6vEaICxoj6TzrIkVAMoifAMt5ZjCrjKRvRN/ba2JZQslPrskKpgoAOtqFu72oTziXpWhTDEAGX0yDXuwxdEYcRmfq7VJOI='
