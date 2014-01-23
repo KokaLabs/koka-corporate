@@ -457,6 +457,7 @@
     <profile>
       <id>release</id>
       <build>
+        <defaultGoal>clean deploy</defaultGoal>
         <plugins>
           <!-- Attach sources -->
           <plugin>
