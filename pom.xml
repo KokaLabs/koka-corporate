@@ -161,7 +161,7 @@
     <version.jaxb2-basics>0.6.5</version.jaxb2-basics>
     <version.jaxb2-basics-runtime>${version.jaxb2-basics}</version.jaxb2-basics-runtime>
     <version.jetty>8.1.14.v20131031</version.jetty>
-    <version.lucene>4.6.0</version.lucene>
+    <version.lucene>4.6.1</version.lucene>
     <version.parboiled-java>1.1.6</version.parboiled-java>
     <version.pdfbox>1.8.4</version.pdfbox>
     <version.poi>3.9</version.poi>
