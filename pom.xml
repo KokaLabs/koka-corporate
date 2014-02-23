@@ -170,7 +170,7 @@
     <version.util>0.1-0</version.util>
     <version.ism-rollup>3.0-10</version.ism-rollup>
     <version.Saxon-HE>9.4.0.7</version.Saxon-HE>
-    <version.slf4j>1.7.5</version.slf4j>
+    <version.slf4j>1.7.6</version.slf4j>
     <version.spring>3.2.5.RELEASE</version.spring>
     <version.spring-ws>2.1.5.RELEASE</version.spring-ws>
     <version.tika>1.4</version.tika>
