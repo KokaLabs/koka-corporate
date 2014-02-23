@@ -1,9 +1,9 @@
 language: java
 install: true
 script:
-  - mvn -s settings.xml -Pprepare-release -Drelease.version.postfix=-${TRAVIS_BUILD_NUMBER}
-  - mvn -s settings.xml -Prelease
-  - eval $(echo 'MAVEN_VERSION=${project.version}' | mvn -s settings.xml help:evaluate | grep ^MAVEN_VERSION=)
+  - ./mvnw -s settings.xml -Pprepare-release -Drelease.version.postfix=-${TRAVIS_BUILD_NUMBER}
+  - ./mvnw -s settings.xml -Prelease
+  - eval $(echo 'MAVEN_VERSION=${project.version}' | ./mvnw -s settings.xml help:evaluate | grep ^MAVEN_VERSION=)
   - git config user.name 'Travis CI'
   - git config user.email 'builds@travis-ci.com'
   - git commit -am "Release v${MAVEN_VERSION}"
