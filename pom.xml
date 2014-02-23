@@ -443,7 +443,7 @@
                   </includes>
                   <replacements>
                     <replacement>
-                      <token><![CDATA[(?<=<version>)${project.version}(?=</version>)]]></token>
+                      <token><![CDATA[(?<=>)${project.version}(?=<)]]></token>
                       <value>${release.version}</value>
                     </replacement>
                   </replacements>
