@@ -107,12 +107,12 @@
       <dependency>
         <groupId>com.sun.faces</groupId>
         <artifactId>jsf-api</artifactId>
-        <version>2.2.4</version>
+        <version>2.2.5</version>
       </dependency>
       <dependency>
         <groupId>com.sun.faces</groupId>
         <artifactId>jsf-impl</artifactId>
-        <version>2.2.4</version>
+        <version>2.2.5</version>
       </dependency>
 
       <dependency>
@@ -130,7 +130,7 @@
       <dependency>
         <groupId>com.thoughtworks.xstream</groupId>
         <artifactId>xstream</artifactId>
-        <version>1.4.5</version>
+        <version>1.4.7</version>
       </dependency>
 
       <dependency>
