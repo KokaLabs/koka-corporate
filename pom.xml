@@ -107,7 +107,7 @@
     <built.repo.dir>${user.dir}/${build.dir.name}/mvn-repo</built.repo.dir>
 
     <real.project.version>0.1</real.project.version>
-    <bintray.package>koka-corporate</bintray.package>
+    <bintray.package>${project.artifactId}</bintray.package>
     <bintray.url>https://api.bintray.com/maven/kokalabs/maven/${bintray.package}/</bintray.url>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
