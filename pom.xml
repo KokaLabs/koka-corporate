@@ -5,7 +5,7 @@
 
   <groupId>kokalabs</groupId>
   <artifactId>koka-corporate</artifactId>
-  <version>0.0.0-SNAPSHOT</version>
+  <version>0.1-44</version>
   <packaging>pom</packaging>
 
   <description>
@@ -16,7 +16,7 @@
         <parent>
           <groupId>kokalabs</groupId>
           <artifactId>koka-corporate</artifactId>
-          <version>0.0.0-SNAPSHOT</version>
+          <version>0.1-44</version>
         </parent>
       ]]>
 
@@ -146,7 +146,7 @@
     <_replaced.by>99-EXCLUDE_ME_AND_USE-</_replaced.by>
     <_excluded>99-EXCLUDE_ME_BECAUSE-</_excluded>
 
-    <version.koka-corporate-dependencies>0.0.0-SNAPSHOT</version.koka-corporate-dependencies>
+    <version.koka-corporate-dependencies>0.1-44</version.koka-corporate-dependencies>
 
     <!-- Declare here if has to be used in multiple places -->
     <version.animal-sniffer-enforcer-rule>1.9</version.animal-sniffer-enforcer-rule>
